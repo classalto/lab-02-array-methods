@@ -8,4 +8,14 @@ const map = (array, callback) => {
   return mappedArray;
 };
 
-module.exports = { map };
+const filter = (array, callback) => {
+  let filteredArray = [];
+
+  for (let element of array) {
+    if (callback(element)) filteredArray = [...filteredArray, element];
+  }
+
+  return filteredArray;
+};
+
+module.exports = { map, filter };
