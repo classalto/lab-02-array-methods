@@ -31,4 +31,16 @@ const findIndex = (array, callback) => {
   return result;
 };
 
-module.exports = { map, filter, findIndex };
+const every = (array, callback) => {
+  let result = true;
+
+  for (let element of array) {
+    if (!callback(element)) {
+      result = false;
+    }
+  }
+
+  return result;
+};
+
+module.exports = { map, filter, findIndex, every };

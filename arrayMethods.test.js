@@ -1,4 +1,4 @@
-const { map, filter, findIndex } = require('./arrayMethods');
+const { map, filter, findIndex, every } = require('./arrayMethods');
 
 describe('map function', () => {
   it('should return an array that adds 1 to every item.', () => {
@@ -29,6 +29,18 @@ describe('findIndex function', () => {
     const result = findIndex(arr, (n) => n === 7);
 
     const expectation = 6;
+
+    expect(result).toEqual(expectation);
+  });
+});
+
+describe('every function', () => {
+  it('should take an array and returns true all elements meet condition or false', () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7];
+
+    const result = every(arr, (n) => n % 2 === 0);
+
+    const expectation = false;
 
     expect(result).toEqual(expectation);
   });
