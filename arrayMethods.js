@@ -18,4 +18,17 @@ const filter = (array, callback) => {
   return filteredArray;
 };
 
-module.exports = { map, filter };
+const findIndex = (array, callback) => {
+  let result = -1;
+
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i])) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+};
+
+module.exports = { map, filter, findIndex };
